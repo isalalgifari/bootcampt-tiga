@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class Student {
 
 	private long id;
+	private String id_Student;
 	private String nama_Student;
 	private String semester_Student;
     private String alamat_Student;
@@ -21,8 +22,8 @@ public class Student {
 		
 	}
 	
-	public Student(String nama_studen, String lastName, String emailId) {
-		
+	public Student(String firstName, String lastName, String emailId) {
+		this.id_Student = id_Student;
 		this.nama_Student = nama_Student;
 		this.semester_Student = semester_Student;
         this.alamat_Student = alamat_Student;
@@ -36,6 +37,14 @@ public class Student {
 	}
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	@Column(name = "id_Student", nullable = false)
+	public String getid_Student() {
+		return id_Student;
+	}
+	public void setid_Student(String id_Student) {
+		this.id_Student = id_Student;
 	}
 	
 	@Column(name = "nama_Student", nullable = false)
@@ -74,8 +83,8 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", nama Student=" + nama_Student + ", semester Student=" + semester_Student + ", alamat Student=" + alamat_Student + ", Jurusan Student=" + jurusan_Student 
-				+ "]";
+		return "Student [id=" + id + ", id_Student=" + id_Student + ", nama_Student=" + nama_Student + ", semester_Student=" + semester_Student
+				+ "alamat_Student="+ alamat_Student+ "jurusan_Student="+ jurusan_Student  "]";
 	}
 	
 }
