@@ -29,42 +29,44 @@ public class StudentController {
 
 	@GetMapping("/Student")
 	public List<Student> getAllStudents() {
-		return studentRepository.findAll();
+		return StudentRepository.findAll();
 	}
 
 	@GetMapping("/students/{id}")
-	public ResponseEntity<S> getStudentById(@PathVariable(value = "id") Long studentId)
+	public ResponseEntity<Student> getStudentById(@PathVariable(value = "id") Long studentId)
 			throws ResourceNotFoundException {
-		Student student = studentRepository.findById(studentId)
+		Student student = StudentRepository.findById(studentId)
 				.orElseThrow(() -> new ResourceNotFoundException("Student not found for this id :: " + studentId));
 		return ResponseEntity.ok().body(student);
 	}
 
 	@PostMapping("/students")
 	public Student createStudent(@Valid @RequestBody Student student) {
-		return studentRepository.save(student);
+		return StudentRepository.save(student);
 	}
 
 	@PutMapping("/students/{id}")
 	public ResponseEntity<Student> updateStudent(@PathVariable(value = "id") Long studentId,
 			@Valid @RequestBody Student studentDetails) throws ResourceNotFoundException {
-		Student student = studentRepository.findById(studentId)
+		Student student = StudentRepository.findById(studentId)
 				.orElseThrow(() -> new ResourceNotFoundException("Student not found for this id :: " + studentId));
 
-		student.setEmailId(studentDetails.getEmailId());
-		student.setLastName(studentDetails.getLastName());
-		student.setFirstName(studentDetails.getFirstName());
-		final Student updatedStudent = studentRepository.save(student);
+		student.setnama_Student(studentDetails.getnama_Student());
+		student.setsemester_Student(studentDetails.getsemester_Student());
+		student.setalamat_Student(studentDetails.getalamat_Student());
+		student.setjurusan_Student(studentDetails.getjurusan_Student());
+
+		final Student updatedStudent = StudentRepository.save(student);
 		return ResponseEntity.ok(updatedStudent);
 	}
 
 	@DeleteMapping("/students/{id}")
 	public Map<String, Boolean> deleteStudent(@PathVariable(value = "id") Long studentId)
 			throws ResourceNotFoundException {
-		Student student = studentRepository.findById(studentId)
+		Student student = StudentRepository.findById(studentId)
 				.orElseThrow(() -> new ResourceNotFoundException("Student not found for this id :: " + studentId));
 
-		studentRepository.delete(student);
+		StudentRepository.delete(student);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return response;

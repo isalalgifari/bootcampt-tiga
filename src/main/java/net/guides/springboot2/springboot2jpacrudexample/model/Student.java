@@ -12,22 +12,21 @@ import javax.persistence.Table;
 public class Student {
 
 	private long id;
-	private String id_Student;
 	private String nama_Student;
 	private String semester_Student;
     private String alamat_Student;
-    private String dosen_Student;
+    private String jurusan_Student;
 	
 	public Student() {
 		
 	}
 	
-	public Student(String firstName, String lastName, String emailId) {
-		this.id_Student = id_Student;
+	public Student(String nama_studen, String lastName, String emailId) {
+		
 		this.nama_Student = nama_Student;
 		this.semester_Student = semester_Student;
         this.alamat_Student = alamat_Student;
-        this.dosen_Student = dosen_Student;
+        this.jurusan_Student = jurusan_Student;
 	}
 	
 	@Id
@@ -37,14 +36,6 @@ public class Student {
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-	
-	@Column(name = "id_Student", nullable = false)
-	public String getid_Student() {
-		return id_Student;
-	}
-	public void setid_Student(String id_Student) {
-		this.id_Student = id_Student;
 	}
 	
 	@Column(name = "nama_Student", nullable = false)
@@ -72,18 +63,18 @@ public class Student {
 	}
 
 
-    @Column(name = "dosen_Student", nullable = false)
-	public String getdosen_Student() {
-		return dosen_Student;
+    @Column(name = "jurusan_Student", nullable = false)
+	public String getjurusan_Student() {
+		return jurusan_Student;
 	}
-	public void setdosen_Student(String dosen_Student) {
-		this.dosen_Student = dosen_Student;
+	public void setjurusan_Student(String jurusan_Student) {
+		this.jurusan_Student = jurusan_Student;
 	}
     
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", nama_Student=" + nama_Student + ", semester_Student=" + semester_Student + ", alamat_Student=" + alamat_Student + ", dosen_Student=" + dosen_Student 
+		return "Student [id=" + id + ", nama Student=" + nama_Student + ", semester Student=" + semester_Student + ", alamat Student=" + alamat_Student + ", Jurusan Student=" + jurusan_Student 
 				+ "]";
 	}
 	
