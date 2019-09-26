@@ -1,3 +1,5 @@
+package net.guides.springboot2.springboot2jpacrudexample.model;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -70,18 +72,18 @@ public class Student {
 	}
 
 
-    @Column(name = "jurusan_Student", nullable = false)
-	public String getjurusan_Student() {
-		return jurusan_Student;
+    @Column(name = "dosen_Student", nullable = false)
+	public String getdosen_Student() {
+		return dosen_Student;
 	}
-	public void setjurusan_Student(String jurusan_Student) {
-		this.jurusan_Student = jurusan_Student;
+	public void setdosen_Student(String dosen_Student) {
+		this.dosen_Student = dosen_Student;
 	}
     
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId=" + emailId
+		return "Student [id=" + id + ", nama_Student=" + nama_Student + ", semester_Student=" + semester_Student + ", alamat_Student=" + alamat_Student + ", dosen_Student=" + dosen_Student 
 				+ "]";
 	}
 	

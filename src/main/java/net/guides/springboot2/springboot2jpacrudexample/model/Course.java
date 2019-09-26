@@ -19,7 +19,7 @@ public class Course {
 		
 	}
 	
-	public Course(String nameCourse, String , String) {
+	public Course(String nameCourse) {
 		this.nameCourse = nameCourse;
 	}
 	
@@ -37,7 +37,7 @@ public class Course {
 		return nameCourse;
 	}
 	public void setnameCourse(String nameCourse) {
-		this.nameCourse = name_Course;
+		this.nameCourse = nameCourse;
 	}
 
 	@Override
