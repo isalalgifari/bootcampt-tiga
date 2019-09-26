@@ -1,3 +1,5 @@
+package net.guides.springboot2.springboot2jpacrudexample.model;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
