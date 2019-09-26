@@ -70,12 +70,12 @@ public class Student {
 	}
 
 
-    @Column(name = "dosen_Student", nullable = false)
-	public String getdosen_Student() {
-		return dosen_Student;
+    @Column(name = "jurusan_Student", nullable = false)
+	public String getjurusan_Student() {
+		return jurusan_Student;
 	}
-	public void setdosen_Student(String dosen_Student) {
-		this.dosen_Student = dosen_Student;
+	public void setjurusan_Student(String jurusan_Student) {
+		this.jurusan_Student = jurusan_Student;
 	}
     
 
