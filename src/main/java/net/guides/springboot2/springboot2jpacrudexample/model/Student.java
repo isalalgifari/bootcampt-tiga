@@ -12,15 +12,12 @@ import javax.persistence.Table;
 public class Student {
 
 	private long id;
-	private String id_Student;
 	private String nama_Student;
 	private String semester_Student;
     private String alamat_Student;
     private String jurusan_Student;
 	
-	public Student() {
-		
-	}
+	
 	
 	public Student(String firstName, String lastName, String emailId) {
 		this.nama_Student = nama_Student;

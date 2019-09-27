@@ -12,19 +12,9 @@ import javax.persistence.Table;
 public class Lecture {
 	
 	private long id;
-	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO ) 
-	
-	@Column( name = "name", nullable = false )
 	private String name;
-	
-	@Column( name = "age", nullable = false )
 	private String age;
-	
-	@Column( name = "major", nullable = false )
 	private String major;
-	
-	@Column( name = "address", nullable = false )
 	private String address;
 	
 	public Lecture( String name, String age, String major, String address ) {
@@ -34,12 +24,8 @@ public class Lecture {
 		this.address = address;
 	}
 	
-	
-	@Override
-	public String toString() {
-		return "Lecture [id=" + id + ", name=" + name + ", age=" + age + ", major=" + major
-				+ "]";
-	}
+	@Id
+	@GeneratedValue( strategy = GenerationType.AUTO ) 
 
 	public long getId() {
 		return id;
@@ -48,7 +34,9 @@ public class Lecture {
 	public void setId(long id) {
 		this.id = id;
 	}
-
+	
+	@Column( name = "name", nullable = false )
+	
 	public String getName() {
 		return name;
 	}
@@ -56,7 +44,9 @@ public class Lecture {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	@Column( name = "age", nullable = false )
+	
 	public String getAge() {
 		return age;
 	}
@@ -64,7 +54,9 @@ public class Lecture {
 	public void setAge(String age) {
 		this.age = age;
 	}
-
+	
+	@Column( name = "major", nullable = false )
+	
 	public String getMajor() {
 		return major;
 	}
@@ -72,7 +64,9 @@ public class Lecture {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-
+	
+	@Column( name = "address", nullable = false )
+	
 	public String getAddress() {
 		return address;
 	}
@@ -80,4 +74,12 @@ public class Lecture {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	@Override
+	public String toString() {
+		return "Lecture [id=" + id + ", name=" + name + ", age=" + age + ", major=" + major
+				+ "]";
+	}
+
+	
 }
