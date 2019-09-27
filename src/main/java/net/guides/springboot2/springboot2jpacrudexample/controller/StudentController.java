@@ -27,7 +27,7 @@ public class StudentController {
 	@Autowired
 	private StudentRepository StudentRepository;
 
-	@GetMapping("/Student")
+	@GetMapping("/students")
 	public List<Student> getAllStudents() {
 		return StudentRepository.findAll();
 	}

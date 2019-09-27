@@ -39,13 +39,7 @@ public class Student {
 		this.id = id;
 	}
 	
-	@Column(name = "id_Student", nullable = false)
-	public String getid_Student() {
-		return id_Student;
-	}
-	public void setid_Student(String id_Student) {
-		this.id_Student = id_Student;
-	}
+	
 	
 	@Column(name = "nama_Student", nullable = false)
 	public String getnama_Student() {
@@ -83,8 +77,8 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", id_Student=" + id_Student + ", nama_Student=" + nama_Student + ", semester_Student=" + semester_Student
-				+ "alamat_Student="+ alamat_Student+ "jurusan_Student="+ jurusan_Student  +"]";
+		return "Student [id=" + id + ", nama Student=" + nama_Student + ", semester Student=" + semester_Student + 
+			   ", alamat Student="	+ alamat_Student + ", Jurusan Student=" + jurusan_Student + "]";
 	}
 	
 }
