@@ -17,7 +17,7 @@ public class Lecture {
 	private String major;
 	private String address;
 	
-	public Lecture( String name, String age, String major, String address ) {
+	public Lecture(String name, String age, String major, String address) {
 		this.name = name;
 		this.age = age;
 		this.major = major;
