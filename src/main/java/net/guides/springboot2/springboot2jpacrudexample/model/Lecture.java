@@ -10,10 +10,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "lecture")
 public class Lecture {
-	
+
 	private long id;
 	private String name;
 	private String age;
+<<<<<<< HEAD
 	private String major;
 	private String address;
 	
@@ -23,63 +24,61 @@ public class Lecture {
 		this.major = major;
 		this.address = address;
 	}
+=======
+    private String major;
+    private String address;
+>>>>>>> 7f6cf6f307d9c482ba24437ad34b6b1bd979a569
 	
+		
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO ) 
-
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
 	
-	@Column( name = "name", nullable = false )
 	
-	public String getName() {
+	
+	@Column(name = "name", nullable = false)
+	public String getname() {
 		return name;
 	}
-
-	public void setName(String name) {
+	public void setname(String name) {
 		this.name = name;
 	}
 	
-	@Column( name = "age", nullable = false )
-	
-	public String getAge() {
+	@Column(name = "age", nullable = false)
+	public String getage() {
 		return age;
 	}
-
-	public void setAge(String age) {
+	public void setage(String age) {
 		this.age = age;
 	}
-	
-	@Column( name = "major", nullable = false )
-	
-	public String getMajor() {
+
+    @Column(name = "major", nullable = false)
+	public String getmajor() {
 		return major;
 	}
-
-	public void setMajor(String major) {
+	public void setmajor(String major) {
 		this.major = major;
 	}
-	
-	@Column( name = "address", nullable = false )
-	
-	public String getAddress() {
+
+
+    @Column(name = "address", nullable = false)
+	public String getaddress() {
 		return address;
 	}
-
-	public void setAddress(String address) {
+	public void setaddress(String address) {
 		this.address = address;
 	}
-	
+    
+
 	@Override
 	public String toString() {
-		return "Lecture [id=" + id + ", name=" + name + ", age=" + age + ", major=" + major
-				+ "]";
+		return "Student [id=" + id + ", Nama Lecture=" + name + ", Age Lecture=" + age + 
+			   ", Major Lucture="	+ major + ", address Lecture=" + address + "]";
 	}
-
 	
 }
