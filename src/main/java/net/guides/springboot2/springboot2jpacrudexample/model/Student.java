@@ -23,7 +23,6 @@ public class Student {
 	}
 	
 	public Student(String firstName, String lastName, String emailId) {
-		this.id_Student = id_Student;
 		this.nama_Student = nama_Student;
 		this.semester_Student = semester_Student;
         this.alamat_Student = alamat_Student;
