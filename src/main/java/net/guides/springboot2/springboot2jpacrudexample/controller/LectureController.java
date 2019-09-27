@@ -51,10 +51,10 @@ public class LectureController {
 		Lecture lecture = lectureRepository.findById(lectureId)
 				.orElseThrow(() -> new ResourceNotFoundException("Lecture not found for this id :: " + lectureId));
 
-		lecture.setName(lectureDetails.getName());
-		lecture.setAge(lectureDetails.getAge());
-		lecture.setMajor(lectureDetails.getMajor());
-		lecture.setAddress(lectureDetails.getAddress());
+		lecture.setname(lectureDetails.getname());
+		lecture.setage(lectureDetails.getage());
+		lecture.setmajor(lectureDetails.getmajor());
+		lecture.setaddress(lectureDetails.getaddress());
 		final Lecture updatedLecture = lectureRepository.save(lecture);
 		return ResponseEntity.ok(updatedLecture);
 	}
