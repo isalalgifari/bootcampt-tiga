@@ -51,10 +51,10 @@ public class LectureController {
 		Lecture lecture = lectureRepository.findById(lectureId)
 				.orElseThrow(() -> new ResourceNotFoundException("Lecture not found for this id :: " + lectureId));
 
-		lecture.setname(lectureDetails.getname());
-		lecture.setage(lectureDetails.getage());
-		lecture.setmajor(lectureDetails.getmajor());
-		lecture.setaddress(lectureDetails.getaddress());
+		lecture.setmataKuliah(lectureDetails.getmataKuliah());
+		lecture.setalamat(lectureDetails.getalamat());
+		lecture.setnamaDosen(lectureDetails.getnamaDosen());
+		lecture.setkdDosen(lectureDetails.getkdDosen());
 		final Lecture updatedLecture = lectureRepository.save(lecture);
 		return ResponseEntity.ok(updatedLecture);
 	}
@@ -63,7 +63,7 @@ public class LectureController {
 	public Map<String, Boolean> deleteLecture(@PathVariable(value = "id") Long lectureId)
 			throws ResourceNotFoundException {
 		Lecture lecture = lectureRepository.findById(lectureId)
-				.orElseThrow(() -> new ResourceNotFoundException("Lecture not found for this id :: " + lectureId));
+				.orElseThrow(() -> new ResourceNotFoundException("lecture not found for this id :: " + lectureId));
 
 		lectureRepository.delete(lecture);
 		Map<String, Boolean> response = new HashMap<>();

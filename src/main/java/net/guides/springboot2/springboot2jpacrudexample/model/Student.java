@@ -10,14 +10,24 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "student")
 public class Student {
-
+	
 	private long id;
+	private String namaDepan;
+	private String namaBelakang;
+	private String emailSw;
+	private String jurusan;
+	private String nomor;
 	
-	private String nama_Student;
-	private String semester_Student;
-    private String alamat_Student;
-    private String jurusan_Student;
+	public Student() {}
 	
+	
+	public Student(String namaDepan, String namaBelakang, String emailSw, String jurus, String nomor) {
+		this.namaDepan = namaDepan;
+		this.namaBelakang = namaBelakang;
+		this.emailSw = emailSw;
+		this.jurusan = jurus;
+		this.nomor = nomor;
+	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,46 +38,50 @@ public class Student {
 		this.id = id;
 	}
 	
-	
-	
-	@Column(name = "nama_Student", nullable = false)
-	public String getnama_Student() {
-		return nama_Student;
+	@Column(name ="nama_depan", nullable = false)
+	public String getNamaDepan() {
+		return namaDepan;
 	}
-	public void setnama_Student(String nama_Student) {
-		this.nama_Student = nama_Student;
+	public void setNamaDepan(String firstName) {
+		this.namaDepan = firstName;
 	}
 	
-	@Column(name = "semester_Student", nullable = false)
-	public String getsemester_Student() {
-		return semester_Student;
+	@Column(name ="nama_belakang", nullable = false)
+	public String getNamaBelakang() {
+		return namaBelakang;
 	}
-	public void setsemester_Student(String semester_Student) {
-		this.semester_Student = semester_Student;
+	public void setNamaBelakang(String lastName) {
+		this.namaBelakang = lastName;
 	}
-
-    @Column(name = "alamat_Student", nullable = false)
-	public String getalamat_Student() {
-		return alamat_Student;
+	
+	@Column(name ="email_address", nullable = false)
+	public String getEmailSw() {
+		return emailSw;
 	}
-	public void setalamat_Student(String alamat_Student) {
-		this.alamat_Student = alamat_Student;
+	public void setEmailSw(String emailSw) {
+		this.emailSw = emailSw;
 	}
-
-
-    @Column(name = "jurusan_Student", nullable = false)
-	public String getjurusan_Student() {
-		return jurusan_Student;
+	
+	@Column(name ="jurusan", nullable = false)
+	public String getJurusan() {
+		return jurusan;
 	}
-	public void setjurusan_Student(String jurusan_Student) {
-		this.jurusan_Student = jurusan_Student;
+	public void setJurusan(String jurus) {
+		this.jurusan = jurus;
 	}
-    
+	
+	@Column(name ="nomor", nullable = false)
+	public String getNomor() {
+		return nomor;
+	}
+	public void setNomor(String nomor) {
+		this.nomor = nomor;
+	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", nama Student=" + nama_Student + ", semester Student=" + semester_Student + 
-			   ", alamat Student="	+ alamat_Student + ", Jurusan Student=" + jurusan_Student + "]";
+		return "Employee [id=" + id + ", namaDepan=" + namaDepan + ", namaBelakang=" + namaBelakang + ", emailSw=" + emailSw
+				 + ", jurusan=" + jurusan + "]";
 	}
-	
+
 }

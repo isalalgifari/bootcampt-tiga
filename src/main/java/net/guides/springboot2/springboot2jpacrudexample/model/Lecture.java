@@ -12,12 +12,23 @@ import javax.persistence.Table;
 public class Lecture {
 
 	private long id;
-	private String name;
-	private String age;
-    private String major;
-    private String address;
+	private String kdDosen;
+	private String namaDosen;
+	private String alamat;
+	private String mataKuliah; 
 	
+	
+	public Lecture() {
 		
+	}
+	
+	public Lecture(String kdDosen, String namaDosen, String alamat, String mataKuliah) {
+		this.kdDosen = kdDosen;
+		this.namaDosen = namaDosen;
+		this.alamat = alamat;
+		this.mataKuliah = mataKuliah;
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
@@ -27,46 +38,42 @@ public class Lecture {
 		this.id = id;
 	}
 	
-	
-	
-	@Column(name = "name", nullable = false)
-	public String getname() {
-		return name;
+	@Column(name = "kd_Dosen", nullable = false)
+	public String getkdDosen() {
+		return kdDosen ;
 	}
-	public void setname(String name) {
-		this.name = name;
+	public void setkdDosen(String kdDosen) {
+		this.kdDosen = kdDosen;
 	}
 	
-	@Column(name = "age", nullable = false)
-	public String getage() {
-		return age;
+	@Column(name = "nama_Dosen", nullable = false)
+	public String getnamaDosen() {
+		return namaDosen;
 	}
-	public void setage(String age) {
-		this.age = age;
+	public void setnamaDosen(String namaDosen) {
+		this.namaDosen = namaDosen;
 	}
-
-    @Column(name = "major", nullable = false)
-	public String getmajor() {
-		return major;
+	
+	@Column(name = "alamat", nullable = false)
+	public String getalamat() {
+		return alamat;
 	}
-	public void setmajor(String major) {
-		this.major = major;
+	public void setalamat(String alamat) {
+		this.alamat = alamat;
 	}
-
-
-    @Column(name = "address", nullable = false)
-	public String getaddress() {
-		return address;
+	
+	@Column(name = "mata_Kuliah", nullable = false)
+	public String getmataKuliah() {
+		return mataKuliah;
 	}
-	public void setaddress(String address) {
-		this.address = address;
+	public void setmataKuliah(String mataKuliah) {
+		this.mataKuliah = mataKuliah;
 	}
-    
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", Nama Lecture=" + name + ", Age Lecture=" + age + 
-			   ", Major Lucture="	+ major + ", address Lecture=" + address + "]";
+		return "Employee [id=" + id + ", kdDosen=" + kdDosen + ", namaDosen=" + namaDosen + ", alamat=" + alamat
+				+ ",mataKuliah=" +mataKuliah +"]";
 	}
 	
 }

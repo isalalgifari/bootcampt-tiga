@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import net.guides.springboot2.springboot2jpacrudexample.exception.ResourceNotFoundException;
 import net.guides.springboot2.springboot2jpacrudexample.model.Course;
+//import net.guides.springboot2.springboot2jpacrudexample.model.Employee;
 import net.guides.springboot2.springboot2jpacrudexample.repository.CourseRepository;
+//import net.guides.springboot2.springboot2jpacrudexample.repository.EmployeeRepository;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -50,8 +52,11 @@ public class CourseController {
 			@Valid @RequestBody Course courseDetails) throws ResourceNotFoundException {
 		Course course = courseRepository.findById(courseId)
 				.orElseThrow(() -> new ResourceNotFoundException("Course not found for this id :: " + courseId));
-
-		course.setnameCourse(courseDetails.getnameCourse());
+		
+		course.setCourseCode(courseDetails.getCourseCode());
+		course.setCourseName(courseDetails.getCourseName());
+		course.setSemester(courseDetails.getSemester());
+		course.setCourseStatus(courseDetails.getCourseStatus());
 		final Course updatedCourse = courseRepository.save(course);
 		return ResponseEntity.ok(updatedCourse);
 	}
