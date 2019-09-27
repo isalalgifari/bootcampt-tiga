@@ -40,7 +40,7 @@ public class LectureController {
 		return ResponseEntity.ok().body(lecture);
 	}
 
-	@PostMapping("/employees")
+	@PostMapping("/lecture")
 	public Lecture createLecture(@Valid @RequestBody Lecture lecture) {
 		return lectureRepository.save(lecture);
 	}
