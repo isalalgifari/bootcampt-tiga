@@ -15,9 +15,7 @@ public class Course {
 	private String nameCourse;
 
 	
-	public Course() {
-		
-	}
+	
 	
 	public Course(String nameCourse) {
 		this.nameCourse = nameCourse;
